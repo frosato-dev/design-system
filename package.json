@@ -1,0 +1,56 @@
+{
+  "name": "design-system",
+  "version": "0.1.0",
+  "description": "A starter for React Redux App using Atomic design",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write './**/*.{js,json,css}'",
+    "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 './**/*.{js,json,css}'",
+    "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
+    "eslint:staged": "eslint --fix --max-warnings=0",
+    "eslint:test": "eslint ./src index.js",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^5.2.8",
+    "@commitlint/config-conventional": "^5.2.3",
+    "@storybook/addon-actions": "^3.3.1",
+    "@storybook/addon-info": "^3.2.16",
+    "@storybook/addon-knobs": "^3.2.16",
+    "@storybook/addon-links": "^3.3.1",
+    "@storybook/addon-options": "^3.2.16",
+    "@storybook/addons": "^3.2.16",
+    "@storybook/react": "^3.3.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
+    "prettier": "^1.7.0"
+  },
+  "lint-staged": {
+    "src/**/*.json": [
+      "fmt:staged",
+      "git add"
+    ],
+    "src/**/*.js": [
+      "fmt:staged",
+      "eslint:staged",
+      "git add"
+    ]
+  }
+}
